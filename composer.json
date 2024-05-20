@@ -1,0 +1,36 @@
+{
+    "name": "federation/ui",
+    "description": "suite of UI components for laravel",
+    "type": "library",
+    "version": "0.0.1",
+    "autoload": {
+        "psr-4": {
+            "Federation\\UI\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Nghokeng Daniel",
+            "email": "nghokend@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Federation\\UI\\FederationUIServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "illuminate/view": "^11.3",
+        "illuminate/contracts": "^11.3",
+        "illuminate/support": "^11.3",
+        "illuminate/console": "^11.4",
+        "illuminate/process": "^11.4",
+        "diglactic/laravel-breadcrumbs": "^5.3"
+    }
+}

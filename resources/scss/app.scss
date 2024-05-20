@@ -1,0 +1,54 @@
+@use "vue-multiselect/dist/vue-multiselect.css";
+@use "flatpickr/dist/flatpickr.min.css";
+@use "alertifyjs/build/css/alertify.min.css";
+@use "alertifyjs/build/css/themes/default.min.css";
+
+@import "@tabler/core/src/scss/tabler.scss";
+@import "@tabler/core/src/scss/demo.scss";
+
+$ti-font-path: '/node_modules/@tabler/icons-webfont/fonts/';
+@import "@tabler/icons-webfont/tabler-icons.scss";
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/resources/fonts/Inter-Regular.woff2') format('woff2'),
+        url('/resources/fonts/Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/resources/fonts/Inter-Bold.woff2') format('woff2'),
+        url('/resources/fonts/Inter-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/resources/fonts/Inter-Light.woff2') format('woff2'),
+        url('/resources/fonts/Inter-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+form {
+    margin: 0;
+}
+.font-inter {
+    font-family: Inter;
+}
+:root {
+    --tblr-font-sans-serif: "Helvetica Neue", -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+}
+
+body {
+    font-feature-settings: "cv03", "cv04", "cv11";
+}
