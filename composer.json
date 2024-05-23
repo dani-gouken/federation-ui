@@ -31,6 +31,7 @@
         "illuminate/support": "^11.3",
         "illuminate/console": "^11.4",
         "illuminate/process": "^11.4",
-        "diglactic/laravel-breadcrumbs": "^5.3"
+        "diglactic/laravel-breadcrumbs": "^5.3",
+        "livewire/livewire": "^3.5"
     }
 }

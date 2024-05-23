@@ -3,8 +3,13 @@
     Dashboard
 @endsection
 @section('content')
-    <div class="container  font-inter">
+    <div class="container font-inter">
         <div class="mx-auto my-4">
+            <div>
+                @livewire('data-table', [
+                    'info' => $datatableInfo,
+                ])
+            </div>
             <div class="row mb-4">
                 <div class="col-md-3">
                     <x-f::stat-card title="Titre" icon="user" description="Description" />

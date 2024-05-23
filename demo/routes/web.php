@@ -3,6 +3,7 @@
 use App\Models\Post;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator;
 use Federation\UI\AssetManager;
+use Federation\UI\Components\DataTable\DataTableInfo;
 use Illuminate\Support\Facades\Route;
 use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 
@@ -63,5 +64,6 @@ Route::get('/', function (AssetManager $assetManager) {
 
     ];
     $navigationLogoutUrl = "#";
-    return view('welcome', compact("css", 'js', 'posts', 'menu', 'navigation', 'breadcrumb', 'sideMenu', 'navigationLogoutUrl'));
+    $datatableInfo = new DataTableInfo(name: 'Posts', model: Post::class, fields: ["title", "created_at"], actions: []);
+    return view('welcome', compact("css", 'js', 'posts', 'menu', 'navigation', 'breadcrumb', 'sideMenu', 'navigationLogoutUrl', 'datatableInfo'));
 });

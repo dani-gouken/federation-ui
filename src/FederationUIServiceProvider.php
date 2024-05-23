@@ -1,9 +1,11 @@
 <?php
 namespace Federation\UI;
 
+use Federation\UI\Components\DataTable\DataTable;
 use Federation\UI\Console\ServeCommand;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class FederationUIServiceProvider extends ServiceProvider
 {
@@ -16,15 +18,15 @@ class FederationUIServiceProvider extends ServiceProvider
                 config('federation_ui.cdn.url')
             )
         );
-
     }
 
     public function boot()
     {
+        Livewire::component('data-table', DataTable::class);
         Blade::directive('federationStyle', function (string $expression) {
             return "<link rel='stylesheet' href='<?php echo app(Federation\UI\AssetManager::class)->getStyleSheetUrl() ?>'>";
         });
-        
+
         Blade::directive('federationScript', function (string $expression) {
             return "<script src='<?php echo app(Federation\UI\AssetManager::class)->getScriptUrl() ?>'></script>";
         });
@@ -36,11 +38,14 @@ class FederationUIServiceProvider extends ServiceProvider
             __DIR__ . '/../config/federation_ui.php',
             'federation_ui'
         );
+
+        
         if ($this->app->runningInConsole()) {
             $this->commands([
                 ServeCommand::class,
             ]);
         }
+
     }
 
 }
