@@ -44,16 +44,18 @@
                     @endif
                     <div class="col-{{ $hasSideMenu ? '9' : '12' }}">
                         <div class="page-header mt-0 d-print-none">
-                            <div class="container-xl">
+                            <div class="container-xl px-0">
                                 <div class="row g-2 align-items-center mb-2">
                                     <div class="col">
-                                        <h2 class="display-5">
+                                        <h2 class="display-6">
                                             @yield('title')
                                         </h2>
                                     </div>
                                 </div>
                                 @if (isset($breadcrumb))
-                                    <x-f::breadcrumb class="mb-4" :name="$breadcrumb" :model="isset($breadcrumbModel) ? $breadcrumbModel : null" />
+                                    <div class="px-1">
+                                        <x-f::breadcrumb class="mb-4" :name="$breadcrumb" :model="isset($breadcrumbModel) ? $breadcrumbModel : null" />
+                                    </div>
                                 @endif
                             </div>
                         </div>
