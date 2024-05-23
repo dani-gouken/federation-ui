@@ -12,9 +12,12 @@ class Breadcrumb extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $name, public ?Model $model = null)
+    public function __construct(public array|string $name, public ?Model $model = null)
     {
-        //
+        if (is_array($name) && (count($name) == 2)) {
+            $this->name = $name[0];
+            $this->model = $name[1];
+        }
     }
 
     /**

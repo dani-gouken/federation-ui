@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 @if (isset($breadcrumb))
-                                    <x-f::breadcrumb class="mb-4" :name="$breadcrumb" />
+                                    <x-f::breadcrumb class="mb-4" :name="$breadcrumb" :model="isset($breadcrumbModel) ? $breadcrumbModel : null" />
                                 @endif
                             </div>
                         </div>
