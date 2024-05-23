@@ -27,7 +27,8 @@ if (!function_exists('dashboard_route')) {
                 $params[] = $model;
             }
         }
-        $name = "dashboard.$routeName.$route";
+        $dashboardRoutePrefix = config('federation_ui.dashboard_route_name_prefix', 'dashboard');
+        $name = "$dashboardRoutePrefix.$routeName.$route";
         $route = Route::getRoutes()->getByName($name);
         $variables = $route?->compiled?->getPathVariables();
         if ($variables && count($variables) != count($params) && is_object($models[0])) {

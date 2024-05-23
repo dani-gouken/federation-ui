@@ -22,10 +22,11 @@ readonly class DataTableInfo implements Wireable
     ) {
         if (is_null($actions)) {
             $route = str($model)->classBasename()->kebab()->lower()->toString();
+            $dashboardRoutePrefix = config('federation_ui.dashboard_route_name_prefix', 'dashboard');
             $this->actions = [
                 "Nouveau" => [
                     "icon" => 'plus',
-                    "url" => route("dashboard.$route.create")
+                    "url" => route("$dashboardRoutePrefix.$route.create")
                 ]
             ];
         } else {
