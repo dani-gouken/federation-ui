@@ -27,6 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
         "locale": French, // locale for this instance only,
         dateFormat: "Y-m-d H:i",
     })
+
+    if (document.getElementById('app')) {
+        const app = createApp()
+        app.component('MultiSelect', MultiSelect)
+        app.mount('#app')
+    }
+
     if (document.getElementById('calendar')) {
         let calendar = new Calendar(document.getElementById('calendar'), {
             locale: frLocale,
@@ -66,12 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }, () => alertify.error('Annulé'));
         })
     });
-
-    if (document.getElementById('app')) {
-        const app = createApp()
-        app.component('MultiSelect', MultiSelect)
-        app.mount('#app')
-    }
 
     Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         .forEach(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

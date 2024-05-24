@@ -30,8 +30,6 @@ class ServeCommand extends Command
         $ds= DIRECTORY_SEPARATOR;
         $path = __DIR__ . "{$ds}..{$ds}..{$ds}public";
         $router = __DIR__ . "{$ds}..{$ds}..{$ds}dev-server.php";
-        $this->line($path);
-        $this->line($router);
         $this->info(<<<TEXT
         ╔═╗╔═╗╔╦╗╔═╗╦═╗╔═╗╔╦╗╦╔═╗╔╗╔
         ╠╣ ║╣  ║║║╣ ╠╦╝╠═╣ ║ ║║ ║║║║ 
@@ -40,7 +38,6 @@ class ServeCommand extends Command
         Starting local file server on [http://$host:$port]"
 
         TEXT);
-        $this->line("php -S $host:$port -t $path $router");
         $res = Process::forever()->run("php -S $host:$port -t $path $router");
         return $res->exitCode();
     }
