@@ -2,7 +2,7 @@
     "name": "federation/ui",
     "description": "suite of UI components for laravel",
     "type": "library",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "autoload": {
         "psr-4": {
             "Federation\\UI\\": "src/"
