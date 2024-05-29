@@ -29,18 +29,18 @@ class Chart extends Component
                         "enabled" => false
                     ],
                 ], $this->options['chart'] ?? []),
-                "fill" => [
+                "fill" => array_merge([
                     "opacity" => 1,
-                ],
-                "stroke" => [
+                ], $this->options['fill'] ?? []),
+                "stroke" => array_merge([
                     "width" => 2,
                     "lineCap" => "round",
                     "curve" => "smooth",
-                ],
-                "tooltip" => [
+                ], $this->options['stroke'] ?? []),
+                "tooltip" => array_merge([
                     "theme" => 'dark'
-                ],
-                "grid" => [
+                ], $this->options['tooltip'] ?? []),
+                "grid" => array_merge([
                     "padding" => [
                         "top" => -20,
                         "right" => 0,
@@ -48,20 +48,20 @@ class Chart extends Component
                         "bottom" => -4
                     ],
                     "strokeDashArray" => 4,
-                ],
-                "xaxis" => [
+                ], $this->options['grid'] ?? []),
+                "xaxis" => array_merge([
                     "labels" => [
                         "padding" => 0,
                     ],
                     "tooltip" => [
                         "enabled" => false
                     ],
-                ],
-                "yaxis" => [
+                ], $this->options['xaxis'] ?? []),
+                "yaxis" => array_merge([
                     "labels" => [
                         "padding" => 4
                     ],
-                ],
+                ], $this->options['yaxis']),
                 ...(isset($this->options['plotOptions']) ? ["plotOptions" => $this->options['plotOptions']] : []),
                 ...(isset($this->options['dataLabels']) ? ["dataLabels" => $this->options['dataLabels']] : []),
                 ...(isset($this->options['colors']) ? ["colors" => $this->options['colors']] : []),
