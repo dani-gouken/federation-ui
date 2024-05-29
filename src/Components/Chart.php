@@ -61,7 +61,7 @@ class Chart extends Component
                     "labels" => [
                         "padding" => 4
                     ],
-                ], $this->options['yaxis']),
+                ], $this->options['yaxis'] ?? []),
                 ...(isset($this->options['plotOptions']) ? ["plotOptions" => $this->options['plotOptions']] : []),
                 ...(isset($this->options['dataLabels']) ? ["dataLabels" => $this->options['dataLabels']] : []),
                 ...(isset($this->options['colors']) ? ["colors" => $this->options['colors']] : []),
