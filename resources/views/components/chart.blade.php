@@ -4,4 +4,4 @@
             {!! json_encode($options) !!})).render();
     });
 </script>
-<div id="{{ $id }}">
+<div id="{{ $id }}"></div>
