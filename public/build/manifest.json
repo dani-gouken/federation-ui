@@ -40,13 +40,13 @@
     "src": "resources/fonts/Inter-Regular.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BHtdjza4.js",
+    "file": "assets/app-BzjexNeQ.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
   },
   "resources/scss/app.scss": {
-    "file": "assets/app-DfxRQyJh.css",
+    "file": "assets/app-DIHHGEmQ.css",
     "src": "resources/scss/app.scss",
     "isEntry": true
   }

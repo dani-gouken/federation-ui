@@ -1,2 +1,2 @@
 export -p > .env
-gcloud storage rsync public gs://${GCLOUD_BUCKET} --recursive --delete-unmatched-destination-objects
+gcloud storage rsync public gs://federation-assets --recursive --delete-unmatched-destination-objects

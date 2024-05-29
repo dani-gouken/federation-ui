@@ -17,8 +17,11 @@ import listPlugin from '@fullcalendar/list';
 import frLocale from '@fullcalendar/core/locales/fr';
 import Alpine from 'alpinejs'
 import alertify from 'alertifyjs';
+import ApexCharts from '@tabler/core/dist/libs/apexcharts/dist/apexcharts.common'
 
 window.alertify = alertify;
+window.ApexCharts = ApexCharts
+
 window.Alpine = Alpine
 Alpine.start()
 

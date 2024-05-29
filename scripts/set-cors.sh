@@ -1,2 +1,2 @@
 export -p > .env
-gcloud storage buckets update gs://${GCLOUD_BUCKET} --cors-file=gcloud-cors.json
+gcloud storage buckets update gs://federation-assets --cors-file=gcloud-cors.json

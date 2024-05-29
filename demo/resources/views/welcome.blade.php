@@ -31,6 +31,29 @@
                 <x-f::Breadcrumb name="home" class="my-4" />
             </x-f::card>
             <x-f::card>
+                <x-slot:title>Charts</x-slot:title>
+                <x-f::bar-chart :labels="['Jan', 'Feb', 'Mar']" :options="[
+                    'legend' => [
+                        'show' => true,
+                    ],
+                ]" :series="[
+                    ['name' => 'Serie 1', 'data' => [155, 65, 465, 265, 225, 325, 80]],
+                    ['name' => 'Serie 1', 'data' => [113, 42, 65, 54, 76, 65, 35]],
+                ]" id="barchart" />
+
+                <x-f::pie-chart :labels="['Direct', 'Affilliate', 'E-mail', 'Other']" :series="[44, 55, 12, 2]" id="piechart" />
+
+                <x-f::line-chart :labels="['Jan', 'Feb', 'Mar']" :options="[
+                    'legend' => [
+                        'show' => true,
+                    ],
+                ]" :series="[
+                    ['name' => 'Serie 1', 'data' => [10, 0, 1]],
+                    ['name' => 'Serie 2', 'data' => [5, 8, 15]],
+                    ['name' => 'Serie 3 ', 'data' => [9, 4, 12]],
+                ]" id="linechart" />
+            </x-f::card>
+            <x-f::card>
                 <x-slot:title>Table</x-slot:title>
                 <x-f::table :fields="['title', 'content']" :info="$posts" />
             </x-f::card>
