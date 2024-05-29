@@ -15,11 +15,13 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import frLocale from '@fullcalendar/core/locales/fr';
-
-
+import Alpine from 'alpinejs'
 import alertify from 'alertifyjs';
 
 window.alertify = alertify;
+window.Alpine = Alpine
+Alpine.start()
+
 
 document.addEventListener('DOMContentLoaded', function () {
     flatpickr("input[datetime-input]", {
