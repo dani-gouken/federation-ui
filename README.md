@@ -6,11 +6,12 @@ A laravel component library based on Tabler UI
 
 # usage
 
-- Start the dev serve
+- Start the dev server
    
 `php artisan federation:ui:server`
 
-- Use the components
+- Use it
+  All the components and layouts are under the "f" namespace, except the datatable
 ```blade
   @extends('f::layouts/dashboard')
 @section('title')
