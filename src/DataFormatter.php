@@ -38,6 +38,12 @@ trait DataFormatter
         return $value;
     }
 
+    protected function formatCallback(string $field, ?Model $model = null, array $options = [])
+    {
+        $value = $this->extractValue($field, $model, $options['default_value'] ?? '');
+        return $options['callback']($value);
+    }
+
     protected function formatBoolean(string $field, ?Model $model = null, array $options = [])
     {
         $value = $this->extractValue($field, $model, $options['default_value'] ?? '');
@@ -73,6 +79,7 @@ trait DataFormatter
     {
         return $options['title'] ?? $field;
     }
+
     protected function formatEnum(string $field, ?Model $model = null, array $options = [])
     {
         $value = $this->extractValue($field, $model);

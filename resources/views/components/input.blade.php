@@ -8,7 +8,8 @@
             @if ($type === 'password') x-bind:type="showPassword ? 'text' : 'password'" @endif
             name="{{ $name }}" aria-describedby="validationServer{{ $name }}"
             placeholder="{{ $placeholder }}" @if ($required) required @endif
-            value="{{ old($name) ?? $value }}" class="form-control @error($name) is-invalid @enderror" type="text" />
+            @if ($type != 'file') value="{{ old($name) ?? $value }}" @endif
+            class="form-control @error($name) is-invalid @enderror" type="text" />
         @if (!empty($suffix))
             <span class="input-group-text"{{ $suffixAttr }}>{{ $suffix }}</span>
         @elseif($type == 'password')
