@@ -2,7 +2,10 @@
 $allowed_origins = "*";
 function _log($level, $msg)
 {
-    file_put_contents("php://stdout", "[" . $level . "] " . $msg . "\n");
+    $debug = false;
+    if($debug) {
+        file_put_contents("php://stdout", "[" . $level . "] " . $msg . "\n");
+    }
 }
 
 function cors_headers($origin)
