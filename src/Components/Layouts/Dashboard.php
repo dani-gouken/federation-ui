@@ -1,19 +1,18 @@
 <?php
 
-namespace Federation\UI\Components;
+namespace Federation\UI\Components\Layouts;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Menu extends Component
+class Dashboard extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(
-        public \Federation\UI\Menu $data,
-    ) {
+    public function __construct()
+    {
         //
     }
 
@@ -22,8 +21,6 @@ class Menu extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('f::components.menu', [
-            "data" => $this->data
-        ]);
+        return view('f::components.layouts.dashboard');
     }
 }

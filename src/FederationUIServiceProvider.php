@@ -18,6 +18,11 @@ class FederationUIServiceProvider extends ServiceProvider
                 config('federation_ui.cdn.url')
             )
         );
+        $this->app->singleton(
+            FederationContext::class,
+            fn() => FederationContext::getInstance()
+                ->set("app.name", config('app.name', ''))
+        );
     }
 
     public function boot()
@@ -39,7 +44,7 @@ class FederationUIServiceProvider extends ServiceProvider
             'federation_ui'
         );
 
-        
+
         if ($this->app->runningInConsole()) {
             $this->commands([
                 ServeCommand::class,

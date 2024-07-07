@@ -1,10 +1,6 @@
-@extends('f::layouts/dashboard')
-@section('title')
-    Dashboard
-@endsection
-@section('content')
+<x-f::layouts.dashboard>
     <div class="container font-inter">
-        <div class="mx-auto my-4">
+        <div class="mx-auto mb-4">
             <div>
                 @livewire('data-table', [
                     'info' => $datatableInfo,
@@ -28,7 +24,7 @@
             </div>
             <x-f::card>
                 <x-slot:title>Breadcrumbs</x-slot:title>
-                <x-f::Breadcrumb name="home" class="my-4" />
+                <x-f::breadcrumb name="home" class="my-4" />
             </x-f::card>
             <x-f::card>
                 <x-slot:title>Charts</x-slot:title>
@@ -63,27 +59,27 @@
                     <x-f::button tag="a" icon="edit" :ghost="true" href="#">Éditer</x-f::button>
                 </x-slot:action>
                 <x-f::input name="daniel" label="Nom" placeholder="Entrez votre nom" :required="false" />
-                <x-f::select model-name-field="title" name="post" label="Select" placeholder="Post" :options="$posts"
-                    :required="false" />
+                <x-f::select model-name-field="title" name="post" label="Select" placeholder="Post"
+                    :options="$posts" :required="false" />
                 <x-f::select multiple model-name-field="title" label="Select multiple" name="post"
                     label="Select (multiple)" placeholder="Post" :options="$posts" :required="false" />
                 <x-f::button>Submit</x-f::button>
             </x-f::card>
             <x-f::card>
                 <x-slot:title>Menu</x-slot:title>
-                <x-f::menu :items="$menu" id="menu1" theme="dark" :user-dropdown-items="[['name' => 'Profile', 'url' => '#'], ['name' => 'Settings', 'url' => '#']]" logout-url="#" />
-                <x-f::menu :items="$menu" id="menu2" theme="light" :user-dropdown-items="[['name' => 'Profile', 'url' => '#'], ['name' => 'Settings', 'url' => '#']]" logout-url="#" />
-                <x-f::menu :items="$menu" id="menu3" theme="dark" logout-url="#">
-                    <x-slot:user-avatar>
-                        <x-f::icon name="star" size="h1" />
-                    </x-slot:user-avatar>
-                </x-f::menu>
+                <x-f::menu :data="$menu" />
+                <x-f::menu :data="$menu" />
+                <x-f::menu :data="$menu" />
+                <x-slot:user-avatar>
+                    <x-f::icon name="star" size="h1" />
+                </x-slot:user-avatar>
             </x-f::card>
             <x-f::card>
                 <form data-confirm="Are you sure?">
                     <x-slot:title>Forms + Confirmation</x-slot:title>
                     <x-slot:action>
-                        <x-f::button tag="a" icon="edit" :ghost="true" href="#">Éditer</x-f::button>
+                        <x-f::button tag="a" icon="edit" :ghost="true"
+                            href="#">Éditer</x-f::button>
                     </x-slot:action>
                     <x-f::input name="daniel" label="Nom" placeholder="Entrez votre nom" :required="false" />
                     <x-f::checkbox name='Checkbox 1' :checked='true' value="1" title="Check box 1 title"
@@ -125,4 +121,4 @@
             </x-f::card>
         </div>
     </div>
-@endsection
+    </x-f::layouts.base>

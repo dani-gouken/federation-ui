@@ -1,5 +1,6 @@
 <?php
 use App\Models\User;
+use Federation\UI\FederationContext;
 use Illuminate\Database\Eloquent\Model;
 
 if (!function_exists('enum_cases_to_string_array')) {
@@ -79,6 +80,7 @@ if (!function_exists('current_user')) {
         return $user;
     }
 }
+
 if (!function_exists('format_remove_reference_format')) {
     function format_remove_reference_format(array $fields): array
     {
@@ -86,10 +88,21 @@ if (!function_exists('format_remove_reference_format')) {
             if (is_string($data)) {
                 return $data;
             }
-            if (isset ($data['format']) && $data['format'] == 'relation') {
+            if (isset($data['format']) && $data['format'] == 'relation') {
                 $data['format'] = 'none';
             }
             return $data;
         }, $fields);
+    }
+}
+
+if (!function_exists('federation')) {
+    function federation(?string $key = null): int|string|bool|FederationContext|null
+    {
+        $context = FederationContext::getInstance();
+        if ($key == null) {
+            return $context;
+        }
+        return $context->get($key);
     }
 }

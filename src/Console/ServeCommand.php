@@ -27,7 +27,7 @@ class ServeCommand extends Command
     {
         $host = config('federation_ui.server.host');
         $port = config('federation_ui.server.port');
-        $ds= DIRECTORY_SEPARATOR;
+        $ds = DIRECTORY_SEPARATOR;
         $path = __DIR__ . "{$ds}..{$ds}..{$ds}public";
         $router = __DIR__ . "{$ds}..{$ds}..{$ds}dev-server.php";
         $this->info(<<<TEXT
@@ -38,7 +38,9 @@ class ServeCommand extends Command
         Starting local file server on [http://$host:$port]"
 
         TEXT);
-        $res = Process::forever()->run("php -S $host:$port -t $path $router");
+        $res = Process::forever()->run("php -S $host:$port -t $path $router", function (string $type, string $output) {
+            echo $output;
+        });
         return $res->exitCode();
     }
 }
