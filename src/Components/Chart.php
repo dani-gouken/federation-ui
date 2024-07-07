@@ -41,12 +41,6 @@ class Chart extends Component
                     "theme" => 'dark'
                 ], $this->options['tooltip'] ?? []),
                 "grid" => array_merge([
-                    "padding" => [
-                        "top" => -20,
-                        "right" => 0,
-                        "left" => -4,
-                        "bottom" => -4
-                    ],
                     "strokeDashArray" => 4,
                 ], $this->options['grid'] ?? []),
                 "xaxis" => array_merge([
