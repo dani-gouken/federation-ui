@@ -18,7 +18,7 @@ class Select extends Component
         public array|Collection $options,
         public string|\BackedEnum|null|array|Collection $selected = null,
         public ?string $label = "",
-        public ?string $modelNameField = null,
+        public ?string $modelNameField = "name",
         public string $placeholder = "",
         public bool $required = true,
         public bool $multiple = false,
