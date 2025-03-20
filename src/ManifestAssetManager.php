@@ -1,7 +1,7 @@
 <?php
 namespace Federation\UI;
 
-class AssetManager
+class ManifestAssetManager implements AssetManagerContract
 {
     const MANIFEST_CACHE_KEY = "federation:ui:manifest";
     private array $manifest = [];
@@ -20,7 +20,7 @@ class AssetManager
         return $this->getUrl('resources/js/app.js');
     }
 
-    public function getUrl(string $file)
+    public function getUrl(string $file): string
     {
         if (!array_key_exists($file, $this->manifest)) {
             throw new \RuntimeException("could not find file [$file] on the manifest");

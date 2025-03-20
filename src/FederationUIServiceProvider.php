@@ -13,8 +13,8 @@ class FederationUIServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            AssetManager::class,
-            fn() => new AssetManager(
+            AssetManagerContract::class,
+            fn() => new ManifestAssetManager(
                 config('federation_ui.cdn.url')
             )
         );
@@ -29,11 +29,11 @@ class FederationUIServiceProvider extends ServiceProvider
     {
         Livewire::component('data-table', DataTable::class);
         Blade::directive('federationStyle', function (string $expression) {
-            return "<link rel='stylesheet' href='<?php echo app(Federation\UI\AssetManager::class)->getStyleSheetUrl() ?>'>";
+            return "<link rel='stylesheet' href='<?php echo app(Federation\UI\AssetManagerContract::class)->getUrl('resources/scss/app.scss') ?>'>";
         });
 
         Blade::directive('federationScript', function (string $expression) {
-            return "<script src='<?php echo app(Federation\UI\AssetManager::class)->getScriptUrl() ?>'></script>";
+            return "<script type='module' src='<?php echo app(Federation\UI\AssetManagerContract::class)->getUrl('resources/js/app.js') ?>'></script>";
         });
 
 

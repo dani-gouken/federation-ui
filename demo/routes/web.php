@@ -2,7 +2,7 @@
 
 use App\Models\Post;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator;
-use Federation\UI\AssetManager;
+use Federation\UI\AssetManagerContract;
 use Federation\UI\Components\DataTable\DataTableInfo;
 use Federation\UI\FederationContext;
 use Federation\UI\ListItem;
@@ -11,7 +11,7 @@ use Federation\UI\MenuItem;
 use Illuminate\Support\Facades\Route;
 use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 
-Route::get('/', function (AssetManager $assetManager, FederationContext $context) {
+Route::get('/', function (AssetManagerContract $assetManager, FederationContext $context) {
     $context
         ->head(
             title: "Demo",
@@ -34,7 +34,6 @@ Route::get('/', function (AssetManager $assetManager, FederationContext $context
                     ])
                 ]
             )
-
         );
     ;
 

@@ -5,11 +5,11 @@
     @endif
     <div class="@error($name) is-invalid @enderror">
         <multi-select
-        :selected="{{ json_encode($selected) }}"
+        selected="{{ json_encode($selected) }}"
          @if ($multiple) :multiple="true" @endif {{ $attributes }}
             @if ($disabled) disabled @endif @if ($required) required @endif
             name="{{ $multiple ? $name . '[]' : $name }}" class="@error($name) is-invalid @enderror"
-            id="{{ $name }}" :options="{{ json_encode($options) }}" placeholder="{{ $placeholder }}">
+            id="{{ $name }}" options="{{ json_encode($options) }}" placeholder="{{ $placeholder }}">
             {{-- @if ($placeholder)
                 <option value='' @if (!$selected) selected @endif disabled>{{ $placeholder }}</option>
                 <option value='' @if (!$selected) selected @endif hidden>{{ $placeholder }}</option>
